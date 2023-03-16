@@ -4,6 +4,8 @@
     <link rel="stylesheet" href="TemplateData/style.css">
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="TemplateData/unityloader41.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script>
         var gameInstance = UnityLoader.instantiate("gameContainer", "Build/slope.json", { onProgress: UnityProgress, Module: { onRuntimeInitialized: function() { UnityProgress(gameInstance, "complete") } } });
     </script>
@@ -32,3 +34,40 @@ function ya() {
         <div id="gameContainer" style="width: 100%; height: 100%; margin: 0;"></div>
     </div>
 </body>
+<div id="screensaver"><p id="screen-text">(Self advertisement) Play my bad game</p><button onclick="stop_screensaver()">Click to close</button><br> <a href="https://htt.awashcard0.ga/">Open my game</a>
+  <style>
+  #screensaver { position: absolute; width: 100%; height:100%; left:0px; top: 0px; display: none; z-index:9999; background-color:black;}
+
+#screen-text {
+  color: white;
+}
+  </style>
+  <script>
+  //start thing
+var screensaver_active = true;
+
+    $('#screensaver').fadeIn();
+    screensaver_animation();
+
+    function stop_screensaver() {
+    $('#screensaver').fadeOut();
+    screensaver_active = false;
+}
+
+$(document).click(function(){
+    if (screensaver_active) {
+        stop_screensaver();
+    }
+});
+
+
+function screensaver_animation(){
+    if (screensaver_active) {
+        $('#screensaver').animate(
+            {},
+            400,
+            screensaver_animation);
+    }
+}
+</script>
+

